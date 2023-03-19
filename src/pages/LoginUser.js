@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
-import Parse from 'parse/dist/parse.min.js';
-import '../App.css';
+import Parse from 'parse';
+import './login.css';
 import { Button, Divider, Input } from 'antd';
+import { initializeParse } from '@parse/react';
 
+initializeParse(
+  'http://localhost:1337/parse',
+  'WEB_PROJECT_APP',
+  'mySecretMasterKey'
+);
 export const UserLogin = () => {
   // State variables
   const [username, setUsername] = useState('');
@@ -46,14 +52,13 @@ export const UserLogin = () => {
   };
 
   return (
-    <div style={{height:"200px", width:"400px", margin:"0 auto", marginTop:"100px"}}>
+    <div >
         {currentUser === null && (
         <div className="container">
           <h2 className="heading">{'User Login'}</h2>
           <Divider />
           <div className="form_wrapper">
             <Input
-              style={{marginTop:"24px"}}
               value={username}
               onChange={(event) => setUsername(event.target.value)}
               placeholder="Username"
@@ -61,7 +66,6 @@ export const UserLogin = () => {
               className="form_input"
             />
             <Input
-              style={{marginTop:"24px"}}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Password"
@@ -73,7 +77,6 @@ export const UserLogin = () => {
           <div className="form_buttons">
             <Button
               onClick={() => doUserLogIn()}
-              style={{marginTop:"24px"}}
               type="primary"
               className="form_button"
               color={'#208AEC'}
