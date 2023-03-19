@@ -1,7 +1,16 @@
 import React from "react";
 import "./login.css";
+import {useNavigate} from 'react-router-dom';
+
 
 export default function Home() {
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    // 👇️ navigate to /contacts
+    navigate('/signup');
+  };
+
   return (
     <div className="login-page">
       <img
@@ -9,9 +18,9 @@ export default function Home() {
         alt="logo-spotify"
         className="logo"
       />
-      <a href={"https://benjiro.ir"}>
-        <div className="login-btn">LOG IN</div>
-      </a>
+      <div>
+        <button className="login-btn" onClick={navigateToLogin}>LOG IN</button>
+      </div>
     </div>
   );
 }
