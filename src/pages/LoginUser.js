@@ -46,24 +46,14 @@ export const UserLogin = () => {
   };
 
   return (
-    <div>
-      <div className="header">
-        <img
-          className="header_logo"
-          alt="Back4App Logo"
-          src={
-            'https://blog.back4app.com/wp-content/uploads/2019/05/back4app-white-logo-500px.png'
-          }
-        />
-        <p className="header_text_bold">{'React on Back4App'}</p>
-        <p className="header_text">{'User Login'}</p>
-      </div>
+    <div style={{height:"200px", width:"400px", margin:"0 auto", marginTop:"100px"}}>
         {currentUser === null && (
         <div className="container">
           <h2 className="heading">{'User Login'}</h2>
           <Divider />
           <div className="form_wrapper">
             <Input
+              style={{marginTop:"24px"}}
               value={username}
               onChange={(event) => setUsername(event.target.value)}
               placeholder="Username"
@@ -71,6 +61,7 @@ export const UserLogin = () => {
               className="form_input"
             />
             <Input
+              style={{marginTop:"24px"}}
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               placeholder="Password"
@@ -82,6 +73,7 @@ export const UserLogin = () => {
           <div className="form_buttons">
             <Button
               onClick={() => doUserLogIn()}
+              style={{marginTop:"24px"}}
               type="primary"
               className="form_button"
               color={'#208AEC'}
@@ -91,8 +83,6 @@ export const UserLogin = () => {
               Log In
             </Button>
           </div>
-          <Divider />
-          <p className="form__hint">Don't have an account? <a className="form__link" href="#">Sign up</a></p>
         </div>
       )}
       {currentUser !== null &&
