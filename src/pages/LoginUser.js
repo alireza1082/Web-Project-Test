@@ -2,13 +2,7 @@ import React, { useState } from 'react';
 import Parse from 'parse';
 import './login.css';
 import { Button, Divider, Input } from 'antd';
-import { initializeParse } from '@parse/react';
 
-initializeParse(
-  'http://localhost:1337/parse',
-  'WEB_PROJECT_APP',
-  'mySecretMasterKey'
-);
 export const UserLogin = () => {
   // State variables
   const [username, setUsername] = useState('');

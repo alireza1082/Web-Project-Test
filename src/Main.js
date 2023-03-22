@@ -3,6 +3,13 @@ import { Routes,
   Route} from "react-router-dom";
 import Home from './pages/Home';
 import SingUp from './pages/SignUp';
+import { initializeParse } from '@parse/react';
+
+initializeParse(
+  'http://localhost:1337/parse',
+  'WEB_PROJECT_APP',
+  'mySecretMasterKey'
+);
 
 const Main = () => {
   return (
