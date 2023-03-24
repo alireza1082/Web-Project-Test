@@ -8,7 +8,7 @@ export default function Home() {
 
   const navigateToLogin = () => {
     // 👇️ navigate to /contacts
-    navigate('/signup');
+    navigate('/Login');
   };
 
   return (

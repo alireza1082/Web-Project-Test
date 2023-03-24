@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import Parse from 'parse';
 import './login.css';
 import { Button, Divider, Input } from 'antd';
+import {useNavigate} from 'react-router-dom';
 
 export const UserLogin = () => {
   // State variables
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
+
+  const navigate = useNavigate();
+
+  const navigateToSignUp = () => {
+    // 👇️ navigate to /signup
+    navigate('/SignUp');
+  };
 
   // Function that will return current user and also update current username
   const getCurrentUser = async function () {
@@ -80,6 +88,7 @@ export const UserLogin = () => {
               Log In
             </Button>
           </div>
+          <p className="form__hint">Don't have an account? <button className="form_link" onClick={navigateToSignUp}>Sign up</button></p>
         </div>
       )}
       {currentUser !== null &&
